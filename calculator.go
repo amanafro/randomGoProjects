@@ -10,8 +10,24 @@ func calculator() {
 
 	var choice string
 
+	var left float64
+	var right float64
+
+	fmt.Println("first num: ")
+	_, err := fmt.Scanln(&left)
+	if err != nil {
+		fmt.Println("error")
+		return
+	}
 	fmt.Println("which operation (+,-,*,/): ")
-	_, err := fmt.Scanln(&choice)
+	_, err = fmt.Scanln(&choice)
+	if err != nil {
+		fmt.Println("error")
+		return
+	}
+
+	fmt.Println("second num: ")
+	_, err = fmt.Scanln(&right)
 	if err != nil {
 		fmt.Println("error")
 		return
@@ -19,53 +35,21 @@ func calculator() {
 
 	switch choice {
 	case "+":
-		add()
+		fmt.Println("result: ", left+right)
 		break
 	case "-":
-		minus()
+		fmt.Println("result: ", left-right)
 		break
 	case "*":
-		multi()
+		fmt.Println("result: ", left*right)
 		break
 	case "/":
-		div()
+		if right != 0 {
+			fmt.Println("result: ", left/right)
+
+		} else {
+			fmt.Println("invalid")
+		}
 		break
 	}
-}
-
-func add() float64 {
-	var left float64
-	var right float64
-
-	fmt.Println("put the")
-
-	return left + right
-}
-
-func minus() float64 {
-	var left float64
-	var right float64
-
-	return left - right
-}
-
-func multi() float64 {
-	var left float64
-	var right float64
-
-	return left * right
-}
-
-func div() float64 {
-
-	var left float64
-	var right float64
-
-	if right != 0 {
-		return left / right
-	} else {
-		fmt.Println("error")
-	}
-
-	return 0
 }
