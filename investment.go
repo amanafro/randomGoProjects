@@ -8,6 +8,7 @@ import (
 func main() {
 	invest()
 }
+
 func invest() {
 	var investamount float64
 	var rate float64
