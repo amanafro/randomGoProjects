@@ -1,37 +1,34 @@
 package main
 
-import "fmt"
+import (
+  "fmt"
+  "math/rand"
+) 
 
 func main() {
-	PasswordGenerator()
+  password := PasswordGenerator(12,true, true)
+  fmt.Print("password generated: ", password)
 }
 
-func PasswordGenerator() {
+const (
+    letterBytes = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    specialBytes = "!@#$%^&*()_+-=[]{}\\|;':\",.<>/?`~"
+    numBytes = "0123456789"
+)
 
-	const (
-		y = "iota"
-		n
-	)
+var length int
+var password []byte
 
-	var input string
-
-	var char = []byte("#abcdefghilkmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+={}[]|;:,.<>/")
-
-	for index, char := range char {
-		fmt.Printf("code: %d, char %c\n", index, char)
-	}
-
-	fmt.Println("what should it contain? ")
-	fmt.Println("number? ")
-	fmt.Scanln(&input)
-	fmt.Println("capital alphabets? ")
-	fmt.Scanln(&input)
-	fmt.Println("small alphabets? ")
-	fmt.Scanln(&input)
-	fmt.Println("special character? ")
-	fmt.Scanln(&input)
-  
-  switch input{
-  case "y":
+func PasswordGenerator(length, num bool, special bool, letter bool) string {
+  b := make([]byte, length)
+  for i := range b {
+    if letter {
+      b[i] = letter[rand.Intn(len(letterBytes))]
+    } else if special {
+      b[i] = special[rand.Intn(len(specialBytes))]
+    } else if num {
+      b[i] = num[rand.Intn(len(numBytes))]
+    }
   }
+  return string(b)
 }
