@@ -1,9 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 	"time"
-  "fmt"
 )
 
 const (
@@ -39,22 +39,22 @@ func PasswordGenerator(length int, useNum, useSpecial, useLetter bool) string {
 
 func main() {
 
-  var length int
+	var length int
 
-  fmt.Println("wanna password (y/N): ")
-  fmt.Scanln(&yesOrNo)
+	fmt.Println("wanna password (y/N): ")
+	fmt.Scanln(&yesOrNo)
 
-  if yesOrNo == "y" {
-    fmt.Println("the length? ", )
-    fmt.Scanln(&length)
-    
-    if length < 4 || length > 25 {
-      fmt.Println("invalid, short or too long")
-    } else {
-  password := PasswordGenerator(length, true, true, true)
-      fmt.Println("passowrd: ", password)
-    }
-  } else {
-    fmt.Println("bye!!!")
-  }
+	if yesOrNo == "y" {
+		fmt.Println("the length? ")
+		fmt.Scanln(&length)
+
+		if length < 4 || length > 25 {
+			fmt.Println("invalid, short or too long")
+		} else {
+			password := PasswordGenerator(length, true, true, true)
+			fmt.Println("passowrd: ", password)
+		}
+	} else {
+		fmt.Println("bye!!!")
+	}
 }
