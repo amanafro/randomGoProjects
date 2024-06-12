@@ -5,11 +5,7 @@ import (
 	"math"
 )
 
-func main() {
-	invest()
-}
-
-func invest() {
+func Invest() {
 	var investamount float64
 	var rate float64
 	var chosenTime float64

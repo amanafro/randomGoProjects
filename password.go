@@ -37,7 +37,7 @@ func PasswordGenerator(length int, useNum, useSpecial, useLetter bool) string {
 	return string(b)
 }
 
-func main() {
+func passowrd() {
 
 	var length int
 

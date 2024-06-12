@@ -2,10 +2,6 @@ package main
 
 import "fmt"
 
-func main() {
-	currency()
-}
-
 func currency() {
 
 	var amount float64
