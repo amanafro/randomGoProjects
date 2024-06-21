@@ -12,7 +12,7 @@ test:
 
 		fmt.Println("choice:")
 
-		fmt.Printf(" 1.Invest \n 2.Passowrd \n 3.Purrency \n 4.Calculator \n")
+		fmt.Printf(" 1.Invest \n 2.Passowrd \n 3.Purrency \n 4.Calculator \n 5.Webscrapping \n")
 		fmt.Println("X for exit")
 		fmt.Scanln(&choice)
 
@@ -25,11 +25,12 @@ test:
 			currency()
 		case "4":
 			calculator()
+		case "5":
+			webscrapping()
 		case "x":
 			break test
 		default:
 			fmt.Println("Invalid")
 		}
 	}
-
 }
