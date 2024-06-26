@@ -2,7 +2,7 @@ this repo containes some mini apps and utilities i've build over a course of tim
 
 to use it install golang:
 
-download here[[https://go.dev/doc/install]]
+download [here](https://go.dev/doc/install)
 
 clone the repo:
 
